@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <ul>
+            <% for(i=0;i<Artical.length;i++){%>
+            <li>
+                <ul style="list-style: none;">
+                    <li>title: <%=Artical[i].title%></li>
+                    <li>discription: <%=Artical[i].discription%>
+                    <li><a href="/showcomment/<%=Artical[i].id%>">show Article</a></li>
+
+                    <li>
+                        <form action="/delete/<%=Artical[i].id%>/?_method=DELETE" method="POST">
+                            <button>Delete</button>
+                        </form>
+                    </li>
+                    <button><a href="/changedata/<%=Artical[i].id%>">change </a></button>
+                </ul>
+            </li>
+            <%}%>
+        </ul>
+        <button onclick="window.location.href = '/new';">add Articls</button>        
+</body>
+</html>
